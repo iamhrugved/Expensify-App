@@ -8,8 +8,9 @@ module.exports = (env, argv) => {
         mode: 'development',
         entry: './src/app.js',
         output: {
-            path: path.join(__dirname, 'public'),
-            filename: 'bundle.js'
+            path: path.join(__dirname, 'public', 'dist'),
+            filename: 'bundle.js',
+            publicPath: '/dist/'
         },
         module: {
             rules: [{
@@ -42,7 +43,7 @@ module.exports = (env, argv) => {
         devtool: isProduction ? 'source-map' : 'inline-cheap-module-source-map',
         devServer: {
             static: {
-                directory: path.join(__dirname, 'public'),
+                directory: path.join(__dirname, 'public')
             },
             historyApiFallback: true
         }
