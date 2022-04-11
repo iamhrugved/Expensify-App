@@ -7,7 +7,9 @@
     "serve": "live-server public/",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "dev-server": "Webpack serve"
+    "dev-server": "Webpack serve",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/core": "^7.17.5",
@@ -20,6 +22,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^6.7.1",
+    "express": "^4.17.3",
     "extract-text-webpack-plugin": "^3.0.2",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^2.6.0",
